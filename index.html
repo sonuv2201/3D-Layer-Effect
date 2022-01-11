@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Hover Layer using CSS</title>
+    <style>
+        body{
+            background-color: teal;
+        }
+
+        .wrapper{
+            position: absolute;
+            left: 50%;
+            top:60%;
+            transform: translate(-50%,-50%);
+        }
+        .layer{
+            position: relative;
+            width: 380px;
+            height: 640px;
+            transform-style: preserve-3d;
+            transform: rotateX(45deg) rotateZ(-40deg) scale(0.5);
+            background: rgba(0,0,0,0.08);
+        }
+
+        .layer img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: 0.5s;
+        }
+
+        .layer:hover img:nth-child(1){
+            transform: translateZ(40px);
+            opacity: 0.4;
+        } 
+
+        .layer:hover img:nth-child(2){
+            transform: translateZ(80px);
+            opacity: 0.6;
+        } 
+
+        .layer:hover img:nth-child(3){
+            transform: translateZ(120px);
+            opacity: 0.8;
+        } 
+
+        .layer:hover img:nth-child(4){
+            transform: translateZ(160px);
+            opacity: 1;
+        } 
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="layer">
+            <img src="bird.jpg">
+            <img src="bird.jpg">
+            <img src="bird.jpg">
+            <img src="bird.jpg">
+        </div>
+    </div>
+</body>
+</html>
